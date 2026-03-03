@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "DragMaster",
+    "version": "1.0.0",
+    "description": "Force Enable Right Click, Copy, and Highlight on any website.",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content/BlacklistManager.js",
+                "content/StyleManager.js",
+                "content/EventManager.js",
+                "content/main.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
